@@ -1,0 +1,32 @@
+###
+GET http://localhost:3001/api/pages
+###
+GET http://localhost:3001/api/images
+###
+POST http://localhost:3001/api/sessions
+Content-Type: application/json
+
+{
+    "username": "alessan.masala@gmail.com",
+    "password": "Alessandro"
+}
+###
+GET http://localhost:3001/api/pages/2/blocks
+###
+POST http://localhost:3001/api/pages
+Content-Type: application/json
+
+{   
+    "Title" : "Nuovo titolo10",
+    "Author" : "Roosvelt",
+    "DateCreation" : "2023-06-22",
+    "DatePublication" : "2023-06-22",
+    "Blocks" : [{"Type":"Header", "Content": "I'm a header", "Position": 0},
+                {"Type":"Paragraph", "Content": "I'm a par", "Position": 1},
+                {"Type":"Header", "Content": "I'm another header", "Position": 2},
+                {"Type":"Image", "Content": "I'm an img", "Position": 3}
+    ]
+}
+###
+DELETE http://localhost:3001/api/pages/7 
+Content-Type: application/json
